@@ -11,6 +11,7 @@ api = CybApi(api_username, api_password, api_client_id, api_client_secret, api_u
 
 def print_varer():
     varer = api.get_varer()
-    print(varer)
+    for i in varer:
+        print(i['navn'])
 
 print_varer()

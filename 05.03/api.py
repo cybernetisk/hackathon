@@ -35,28 +35,6 @@ class CybApi:
     def _token_updater(self, token):
         self._token = token
 
-
-    def register_internrole(self, username, roles):
-        url = self._base_url + "api/intern/internroles"
-        data = {"username": username, "role": roles}
-
-        request = self._client.post(url, data=data, verify=False)
-
-        if request.status_code == 201:
-            return True
-        else:
-            return False
-
-    def register_card(self, user_id, card_num):
-        url = self._base_url + "api/core/cards"
-        data = {"card_number": str(card_num), "user": int(user_id)}
-        request = self._client.post(url, data=data, verify=False)
-
-        if request.status_code == 201:
-            return True
-        else:
-            return False
-
     def get_varer(self):
         url = self._base_url + 'api/varer/r%C3%A5varer'
         response = self._client.get(url)
